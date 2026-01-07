@@ -10,4 +10,7 @@ public interface IEmployee
 //solving using switch case statement
         void CalculateUsingSwitch(); 
 
+        //calculate monthyly wage
+        void CalculateMonthlyWage();
+
 }

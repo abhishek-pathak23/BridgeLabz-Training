@@ -38,7 +38,6 @@ public void AddPartTimeEmployee()
     }
 
     //uc 4:calculate using switch case
-
      public void CalculateUsingSwitch()
     {
         int workType = random.Next(0, 3);
@@ -62,6 +61,12 @@ public void AddPartTimeEmployee()
         }
 
         Console.WriteLine($"Wage : {hoursWorked * WagePerHour}");
+    }
+//uc 5:Calculating Wages for a Month
+    public void CalculateMonthlyWage()
+    {
+        int monthlyWage = WagePerHour * FullDayHours * MaxWorkingDays;
+        Console.WriteLine($"Monthly Wage : {monthlyWage}");
     }
 
 }
