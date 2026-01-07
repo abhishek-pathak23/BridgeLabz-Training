@@ -1,6 +1,9 @@
 namespace EmployeeWage;
 public interface IEmployee
 {
-    void CheckAttendance();
+    //check attendence method delcare
+        void CheckAttendance();
+    //calculate daily wage
+        void CalculateDailyWage();
 
 }
