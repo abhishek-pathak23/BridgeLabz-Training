@@ -13,4 +13,7 @@ public interface IEmployee
         //calculate monthyly wage
         void CalculateMonthlyWage();
 
+        //calcualte wage 
+         void CalculateWageWithCondition();
+
 }

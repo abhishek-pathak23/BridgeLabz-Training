@@ -21,6 +21,7 @@ public sealed class EmployeeMenu
               Console.WriteLine("3. Part Time Wage");
                Console.WriteLine("4. Switch Case");
                Console.WriteLine("5. Monthly Wage");
+                Console.WriteLine("6. Wage with Condition");
             Console.WriteLine("0. Exit");
             Console.Write("Enter choice: ");
             //take choice input from user
@@ -42,6 +43,9 @@ public sealed class EmployeeMenu
                     break;
                 case 5:
                     employeeUtility.CalculateMonthlyWage();
+                    break;
+                case 6:
+                    employeeUtility.CalculateWageWithCondition();
                     break;
                 
             }

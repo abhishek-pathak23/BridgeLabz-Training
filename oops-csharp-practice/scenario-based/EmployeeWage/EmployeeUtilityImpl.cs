@@ -69,4 +69,39 @@ public void AddPartTimeEmployee()
         Console.WriteLine($"Monthly Wage : {monthlyWage}");
     }
 
+    //Calculate Wages till a condition of total working hours or days is reached for a month 
+     public void CalculateWageWithCondition()
+    {
+        employee.TotalWorkingDays = 0;
+        employee.TotalWorkingHours = 0;
+        employee.TotalWage = 0;
+
+        while (employee.TotalWorkingDays < MaxWorkingDays &&
+               employee.TotalWorkingHours < MaxWorkingHours)
+        {
+            employee.TotalWorkingDays++;
+
+            int workType = random.Next(0, 3);
+            int hoursWorked = 0;
+
+            switch (workType)
+            {
+                case 1:
+                    hoursWorked = FullDayHours;
+                    break;
+                case 2:
+                    hoursWorked = PartTimeHours;
+                    break;
+            }
+
+            employee.TotalWorkingHours += hoursWorked;
+            employee.TotalWage += hoursWorked * WagePerHour;
+        }
+
+        Console.WriteLine("\n--- Employee Wage Summary ---");
+        Console.WriteLine($"Total Working Days  : {employee.TotalWorkingDays}");
+        Console.WriteLine($"Total Working Hours : {employee.TotalWorkingHours}");
+        Console.WriteLine($"Total Wage          : {employee.TotalWage}");
+    }
 }
+
