@@ -36,4 +36,32 @@ public void AddPartTimeEmployee()
         int partTimeWage = WagePerHour * PartTimeHours;
         Console.WriteLine($"Part Time Wage : {partTimeWage}");
     }
+
+    //uc 4:calculate using switch case
+
+     public void CalculateUsingSwitch()
+    {
+        int workType = random.Next(0, 3);
+        int hoursWorked = 0;
+
+        switch (workType)
+        {
+            case 1:
+                hoursWorked = FullDayHours;
+                Console.WriteLine("Full Time Employee");
+                break;
+
+            case 2:
+                hoursWorked = PartTimeHours;
+                Console.WriteLine("Part Time Employee");
+                break;
+
+            default:
+                Console.WriteLine("Employee is Absent");
+                break;
+        }
+
+        Console.WriteLine($"Wage : {hoursWorked * WagePerHour}");
+    }
+
 }

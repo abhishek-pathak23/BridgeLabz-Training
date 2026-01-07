@@ -19,6 +19,7 @@ public sealed class EmployeeMenu
             Console.WriteLine("1. Check Attendance");
              Console.WriteLine("2. Daily Wage");
               Console.WriteLine("3. Part Time Wage");
+               Console.WriteLine("4. Switch Case");
             Console.WriteLine("0. Exit");
             Console.Write("Enter choice: ");
             //take choice input from user
@@ -34,6 +35,9 @@ public sealed class EmployeeMenu
                     break;
                 case 3:
                     employeeUtility.AddPartTimeEmployee();
+                    break;
+                case 4:
+                    employeeUtility.CalculateUsingSwitch();
                     break;
                 
             }

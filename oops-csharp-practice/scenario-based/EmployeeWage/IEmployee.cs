@@ -7,5 +7,7 @@ public interface IEmployee
         void CalculateDailyWage();
     //add part time employee and wage
         void AddPartTimeEmployee();
+//solving using switch case statement
+        void CalculateUsingSwitch(); 
 
 }
