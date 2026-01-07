@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\BridgeLabz-Training\\oops-csharp-practice\\scenario-based\\EMPLOYEEWAGE\\EmployeeWage.csproj",
+      "projectUniqueName": "C:\\BridgeLabz-Training\\oops-csharp-practice\\scenario-based\\EmployeeWage\\EmployeeWage.csproj",
       "projectName": "EmployeeWage",
-      "projectPath": "c:\\BridgeLabz-Training\\oops-csharp-practice\\scenario-based\\EMPLOYEEWAGE\\EmployeeWage.csproj",
+      "projectPath": "C:\\BridgeLabz-Training\\oops-csharp-practice\\scenario-based\\EmployeeWage\\EmployeeWage.csproj",
       "packagesPath": "C:\\Users\\abhip\\.nuget\\packages\\",
-      "outputPath": "c:\\BridgeLabz-Training\\oops-csharp-practice\\scenario-based\\EMPLOYEEWAGE\\obj\\",
+      "outputPath": "C:\\BridgeLabz-Training\\oops-csharp-practice\\scenario-based\\EmployeeWage\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

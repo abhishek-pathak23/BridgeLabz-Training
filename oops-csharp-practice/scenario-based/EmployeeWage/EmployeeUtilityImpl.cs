@@ -29,4 +29,11 @@ public class EmployeeUtilityImpl:IEmployee
         Console.WriteLine($"Daily Wage : {dailyWage}");
     }
 
+
+//uc3:add part time employee and  wage
+public void AddPartTimeEmployee()
+    {
+        int partTimeWage = WagePerHour * PartTimeHours;
+        Console.WriteLine($"Part Time Wage : {partTimeWage}");
+    }
 }

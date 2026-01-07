@@ -5,5 +5,7 @@ public interface IEmployee
         void CheckAttendance();
     //calculate daily wage
         void CalculateDailyWage();
+    //add part time employee and wage
+        void AddPartTimeEmployee();
 
 }
