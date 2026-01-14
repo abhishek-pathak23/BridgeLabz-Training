@@ -13,7 +13,7 @@ namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
 
             do
             {
-                Console.WriteLine("1. Add Contact");
+                Console.WriteLine("1. Add Contact");  // Menu's displayed to the user
                 Console.WriteLine("2. Edit Contact");
                 Console.WriteLine("3. Delete Contact");
                 Console.WriteLine("0. Exit");

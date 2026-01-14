@@ -13,6 +13,8 @@ namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
         {
             contact = new Contact();
 
+            //Taking inputs
+
             Console.Write("Enter First Name: ");
             contact.FirstName = Console.ReadLine();
 
