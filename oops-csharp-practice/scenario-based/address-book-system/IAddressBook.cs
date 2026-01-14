@@ -8,5 +8,6 @@ namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
     {
         void AddContact();
         void EditContact();
+        void DeleteContact();
     }
 }

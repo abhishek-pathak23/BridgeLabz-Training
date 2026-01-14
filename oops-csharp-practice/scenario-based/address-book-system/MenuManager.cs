@@ -15,6 +15,7 @@ namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
             {
                 Console.WriteLine("1. Add Contact");
                 Console.WriteLine("2. Edit Contact");
+                Console.WriteLine("3. Delete Contact");
                 Console.WriteLine("0. Exit");
                 Console.Write("Enter your choice: ");
 
@@ -28,6 +29,10 @@ namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
 
                     case 2:
                         addressBook.EditContact();
+                        break;
+
+                    case 3:
+                        addressBook.DeleteContact();
                         break;
 
                     case 0:
