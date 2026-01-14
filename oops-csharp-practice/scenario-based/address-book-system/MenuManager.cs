@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
 {
@@ -13,11 +11,13 @@ namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
 
             do
             {
-                Console.WriteLine("1. Add Contact");  // Menu's displayed to the user
-                Console.WriteLine("2. Edit Contact");
-                Console.WriteLine("3. Delete Contact");
+                Console.WriteLine("\n--- Address Book Menu ---");
+                Console.WriteLine("1. Add Contact");
+                Console.WriteLine("2. Add Multiple Contacts");
+                Console.WriteLine("3. Edit Contact");
+                Console.WriteLine("4. Delete Contact");
                 Console.WriteLine("0. Exit");
-                Console.Write("Enter your choice: ");
+                Console.Write("Enter Choice: ");
 
                 choice = Convert.ToInt32(Console.ReadLine());
 
@@ -28,10 +28,14 @@ namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
                         break;
 
                     case 2:
-                        addressBook.EditContact();
+                        addressBook.AddMultipleContactsMenu();
                         break;
 
                     case 3:
+                        addressBook.EditContact();
+                        break;
+
+                    case 4:
                         addressBook.DeleteContact();
                         break;
 
