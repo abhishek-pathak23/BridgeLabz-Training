@@ -6,38 +6,40 @@ namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
 {
     internal class MenuManager
     {
-        // Displays the main menu and handles user interactions
         public static void DisplayMenu()
         {
-            IAddressBook addressBook = new AddressBook(); // Create AddressBook instance
+            IAddressBook addressBook = new AddressBook();
             int choice;
 
             do
             {
-                // Display menu options
                 Console.WriteLine("1. Add Contact");
+                Console.WriteLine("2. Edit Contact");
                 Console.WriteLine("0. Exit");
                 Console.Write("Enter your choice: ");
 
-                choice = Convert.ToInt32(Console.ReadLine()); // Read user choice
+                choice = Convert.ToInt32(Console.ReadLine());
 
-                // Perform action based on user choice
                 switch (choice)
                 {
                     case 1:
-                        addressBook.AddContact(); // Call method to add a contact
+                        addressBook.AddContact();
+                        break;
+
+                    case 2:
+                        addressBook.EditContact();
                         break;
 
                     case 0:
-                        Console.WriteLine("Program Ended"); // Exit message
+                        Console.WriteLine("Program Ended");
                         break;
 
                     default:
-                        Console.WriteLine("Invalid Choice"); // Handle wrong input
+                        Console.WriteLine("Invalid Choice");
                         break;
                 }
 
-            } while (choice != 0); // Loop until user chooses to exit
+            } while (choice != 0);
         }
     }
 }

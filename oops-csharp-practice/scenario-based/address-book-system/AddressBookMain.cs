@@ -6,12 +6,9 @@ namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
 {
     internal class AddressBookMain
     {
-        // Entry point of the Address Book application
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Address Book Program\n"); // Greeting message
-
-            // Display the main menu and handle user choices
+            Console.WriteLine("Welcome to Address Book Program\n");
             MenuManager.DisplayMenu();
         }
     }
