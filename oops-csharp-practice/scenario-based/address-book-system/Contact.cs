@@ -6,6 +6,7 @@ namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
 {
     internal class Contact
     {
+        // Contact
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Address { get; set; }
