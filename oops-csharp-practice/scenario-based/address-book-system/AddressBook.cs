@@ -14,7 +14,7 @@ namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
             Name = name;
         }
 
-        // UC-7: Add contact with duplicate check
+        // UC-7
         public void AddContact()
         {
             if (count >= contacts.Length)
@@ -31,7 +31,6 @@ namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
             Console.Write("Enter Last Name: ");
             contact.LastName = Console.ReadLine();
 
-            // Duplicate check
             for (int i = 0; i < count; i++)
             {
                 if (contacts[i].Equals(contact))
@@ -59,9 +58,7 @@ namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
             Console.Write("Enter Email: ");
             contact.Email = Console.ReadLine();
 
-            contacts[count] = contact;
-            count++;
-
+            contacts[count++] = contact;
             Console.WriteLine("Contact Added Successfully\n");
         }
 
@@ -73,21 +70,12 @@ namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
                 Console.WriteLine($"\n--- Add Contacts to Address Book: {Name} ---");
                 Console.WriteLine("1. Add New Contact");
                 Console.WriteLine("0. Go Back");
-                Console.Write("Enter Choice: ");
 
                 choice = Convert.ToInt32(Console.ReadLine());
 
-                switch (choice)
-                {
-                    case 1:
-                        AddContact();
-                        break;
-                    case 0:
-                        break;
-                    default:
-                        Console.WriteLine("Invalid Choice");
-                        break;
-                }
+                if (choice == 1)
+                    AddContact();
+
             } while (choice != 0);
         }
 
@@ -100,25 +88,9 @@ namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
             {
                 if (contacts[i].FirstName == name)
                 {
-                    Console.Write("Enter New Address: ");
-                    contacts[i].Address = Console.ReadLine();
-
                     Console.Write("Enter New City: ");
                     contacts[i].City = Console.ReadLine();
-
-                    Console.Write("Enter New State: ");
-                    contacts[i].State = Console.ReadLine();
-
-                    Console.Write("Enter New Zip: ");
-                    contacts[i].Zip = Console.ReadLine();
-
-                    Console.Write("Enter New Phone Number: ");
-                    contacts[i].PhoneNumber = Console.ReadLine();
-
-                    Console.Write("Enter New Email: ");
-                    contacts[i].Email = Console.ReadLine();
-
-                    Console.WriteLine("Contact Updated Successfully\n");
+                    Console.WriteLine("Contact Updated\n");
                     return;
                 }
             }
@@ -138,15 +110,32 @@ namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
                     for (int j = i; j < count - 1; j++)
                         contacts[j] = contacts[j + 1];
 
-                    contacts[count - 1] = null;
-                    count--;
-
-                    Console.WriteLine("Contact Deleted Successfully\n");
+                    contacts[--count] = null;
+                    Console.WriteLine("Contact Deleted\n");
                     return;
                 }
             }
 
             Console.WriteLine("Contact Not Found\n");
+        }
+
+        // UC-8
+        public void SearchByCity(string city)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                if (contacts[i].City == city)
+                    Console.WriteLine($"{contacts[i].FirstName} {contacts[i].LastName} | {Name}");
+            }
+        }
+
+        public void SearchByState(string state)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                if (contacts[i].State == state)
+                    Console.WriteLine($"{contacts[i].FirstName} {contacts[i].LastName} | {Name}");
+            }
         }
     }
 }
