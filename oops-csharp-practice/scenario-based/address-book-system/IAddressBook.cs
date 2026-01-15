@@ -19,5 +19,11 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.address_book
         void SearchByCity(string city);
         //method to search by state
         void SearchByState(string state);
+        // count by city
+        int GetCountByCity(string city);
+
+        // count by state
+        int GetCountByState(string state);
+
     }
 }

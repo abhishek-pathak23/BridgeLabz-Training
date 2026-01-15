@@ -180,7 +180,7 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.address_book
 
 
 
-        // UC-9
+        // UC-9:Ability to view Persons by City or State
         public void AddToCityStateMap(
             string[] cities, string[] cityPersons, ref int cityCount,
             string[] states, string[] statePersons, ref int stateCount)
@@ -233,6 +233,31 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.address_book
                     statePersons[stateIndex] += ", " + fullName;
                 }
             }
+        }
+
+
+        // UC-10: Ability to get number of contact persons by City
+        public int GetCountByCity(string city)
+        {
+            int cityCount = 0;
+            for (int i = 0; i < count; i++)
+            {
+                if (contacts[i].City == city)
+                    cityCount++;
+            }
+            return cityCount;
+        }
+
+        // UC-10: Ability to get number of contact persons by State
+        public int GetCountByState(string state)
+        {
+            int stateCount = 0;
+            for (int i = 0; i < count; i++)
+            {
+                if (contacts[i].State == state)
+                    stateCount++;
+            }
+            return stateCount;
         }
 
     }

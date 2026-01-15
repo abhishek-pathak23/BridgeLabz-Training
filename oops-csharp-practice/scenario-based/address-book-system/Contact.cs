@@ -11,7 +11,7 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.address_book
     {
         public string FirstName { get; set; }   // Contact's first name
         public string LastName { get; set; }    // Contact's last name
-        public string Address { get; set; }     // Street address
+        public string Address { get; set; }     //  address
         public string City { get; set; }        // City
         public string State { get; set; }       // State
         public string Zip { get; set; }         // ZIP code

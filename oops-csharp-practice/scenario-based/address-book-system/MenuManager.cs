@@ -33,6 +33,7 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.address_book
                 Console.WriteLine("2. Select Address Book");
                 Console.WriteLine("3. Search Person (City/State)");
                 Console.WriteLine("4. View Persons by City or State");
+                Console.WriteLine("5. Count Persons by City or State");
 
                 Console.WriteLine("0. Exit");
                 Console.Write("Enter Choice: ");
@@ -53,7 +54,9 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.address_book
                     case 4:
                         ViewPersonsByCityOrState();
                         break;
-
+                    case 5:
+                        CountPersonsByCityOrState();
+                        break;
                     case 0:
                         Console.WriteLine("Program Ended");
                         break;
@@ -134,6 +137,8 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.address_book
                 Console.WriteLine("2. Edit Contact");
                 Console.WriteLine("3. Delete Contact");
                 Console.WriteLine("4. Add Multiple Contacts");
+               
+
                 Console.WriteLine("0. Exit");
                 Console.Write("Enter your choice: ");
 
@@ -156,6 +161,8 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.address_book
                     case 4:
                         book.AddMultipleContactsMenu();
                         break;
+                   
+
                     case 0:
                         break;
 
@@ -185,7 +192,7 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.address_book
                     addressBooks[i].SearchByState(value);
             }
         }
-
+        //UC-9:Ability to view Persons by City or State
         private static void ViewPersonsByCityOrState()
         {
             cityCount = 0;
@@ -214,6 +221,34 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.address_book
                 for (int i = 0; i < stateCount; i++)
                     Console.WriteLine($"{stateNames[i]} -> {statePersons[i]}");
             }
+        }
+
+
+
+        // UC-10: Ability to get number of contact persons by City or State
+        private static void CountPersonsByCityOrState()
+        {
+            Console.WriteLine("1. Count by City");
+            Console.WriteLine("2. Count by State");
+
+            int choice = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter value: ");
+            string value = Console.ReadLine();
+
+            int totalCount = 0;
+
+            for (int i = 0; i < bookCount; i++)
+            {
+                if (choice == 1)
+                    totalCount += addressBooks[i].GetCountByCity(value);
+                else if (choice == 2)
+                    totalCount += addressBooks[i].GetCountByState(value);
+            }
+
+            if (choice == 1)
+                Console.WriteLine($"Total Contacts in City '{value}' : {totalCount}");
+            else
+                Console.WriteLine($"Total Contacts in State '{value}' : {totalCount}");
         }
 
     }
