@@ -260,5 +260,31 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.address_book
             return stateCount;
         }
 
+
+        // UC-11: Ability to sort contacts alphabetically by First Name
+        public void SortContactsByName()
+        {
+            for (int i = 0; i < count - 1; i++)
+            {
+                for (int j = i + 1; j < count; j++)
+                {
+                    // Compare First Names
+                    if (string.Compare(contacts[i].FirstName, contacts[j].FirstName) > 0)
+                    {
+                        // Swap contacts
+                        Contact temp = contacts[i];
+                        contacts[i] = contacts[j];
+                        contacts[j] = temp;
+                    }
+                }
+            }
+
+            Console.WriteLine("\n--- Contacts Sorted Alphabetically ---");
+            for (int i = 0; i < count; i++)
+            {
+                Console.WriteLine(contacts[i].ToString());
+            }
+        }
+
     }
 }

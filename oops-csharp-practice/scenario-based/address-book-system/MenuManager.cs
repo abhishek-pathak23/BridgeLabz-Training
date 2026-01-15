@@ -137,8 +137,7 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.address_book
                 Console.WriteLine("2. Edit Contact");
                 Console.WriteLine("3. Delete Contact");
                 Console.WriteLine("4. Add Multiple Contacts");
-               
-
+                Console.WriteLine("5. Sort Contacts by Name");
                 Console.WriteLine("0. Exit");
                 Console.Write("Enter your choice: ");
 
@@ -161,7 +160,10 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.address_book
                     case 4:
                         book.AddMultipleContactsMenu();
                         break;
-                   
+
+                    case 5:
+                        book.SortContactsByName();
+                        break;
 
                     case 0:
                         break;
