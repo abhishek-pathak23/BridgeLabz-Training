@@ -1,5 +1,4 @@
-﻿// uc-6 Refactor to add multiple Address Book to the System. Each Address Book has a unique Name 
-using System;
+﻿using System;
 
 namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
 {
@@ -8,14 +7,14 @@ namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
         private Contact[] contacts = new Contact[50];
         private int count = 0;
 
-        public string Name; // Name of this Address Book
+        public string Name;
 
         public AddressBook(string name)
         {
             Name = name;
         }
 
-        // Add a single contact
+        // UC-7: Add contact with duplicate check
         public void AddContact()
         {
             if (count >= contacts.Length)
@@ -31,6 +30,16 @@ namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
 
             Console.Write("Enter Last Name: ");
             contact.LastName = Console.ReadLine();
+
+            // Duplicate check
+            for (int i = 0; i < count; i++)
+            {
+                if (contacts[i].Equals(contact))
+                {
+                    Console.WriteLine("Duplicate Contact Found. Cannot Add Same Person Again\n");
+                    return;
+                }
+            }
 
             Console.Write("Enter Address: ");
             contact.Address = Console.ReadLine();
@@ -56,7 +65,6 @@ namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
             Console.WriteLine("Contact Added Successfully\n");
         }
 
-        // Add multiple contacts menu
         public void AddMultipleContactsMenu()
         {
             int choice;
@@ -80,11 +88,9 @@ namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
                         Console.WriteLine("Invalid Choice");
                         break;
                 }
-
             } while (choice != 0);
         }
 
-        // Edit contact by first name
         public void EditContact()
         {
             Console.Write("Enter First Name to Edit: ");
@@ -120,7 +126,6 @@ namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
             Console.WriteLine("Contact Not Found\n");
         }
 
-        // Delete contact by first name
         public void DeleteContact()
         {
             Console.Write("Enter First Name to Delete: ");

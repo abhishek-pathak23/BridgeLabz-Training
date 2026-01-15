@@ -1,5 +1,4 @@
-﻿// interface
-using System;
+﻿using System;
 
 namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
 {

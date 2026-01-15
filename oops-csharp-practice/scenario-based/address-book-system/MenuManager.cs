@@ -1,12 +1,11 @@
-﻿
-using System;
+﻿using System;
 
 namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
 {
     internal class MenuManager
     {
-        private static AddressBook[] addressBooks = new AddressBook[10]; // Max 10 Address Books
-        private static string[] addressBookNames = new string[10]; // Names for uniqueness
+        private static AddressBook[] addressBooks = new AddressBook[10];
+        private static string[] addressBookNames = new string[10];
         private static int bookCount = 0;
 
         public static void DisplayMenu()
@@ -53,7 +52,6 @@ namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
             Console.Write("Enter Name for New Address Book: ");
             string name = Console.ReadLine();
 
-            // Check if name is unique
             for (int i = 0; i < bookCount; i++)
             {
                 if (addressBookNames[i] == name)
@@ -63,8 +61,7 @@ namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
                 }
             }
 
-            AddressBook newBook = new AddressBook(name);
-            addressBooks[bookCount] = newBook;
+            addressBooks[bookCount] = new AddressBook(name);
             addressBookNames[bookCount] = name;
             bookCount++;
 
@@ -75,15 +72,14 @@ namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
         {
             if (bookCount == 0)
             {
-                Console.WriteLine("No Address Books available. Create one first!\n");
+                Console.WriteLine("No Address Books available\n");
                 return;
             }
 
-            Console.WriteLine("\nAvailable Address Books:");
             for (int i = 0; i < bookCount; i++)
                 Console.WriteLine($"{i + 1}. {addressBookNames[i]}");
 
-            Console.Write("Select Address Book by number: ");
+            Console.Write("Select Address Book: ");
             int choice = Convert.ToInt32(Console.ReadLine());
 
             if (choice < 1 || choice > bookCount)
@@ -92,9 +88,7 @@ namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
                 return;
             }
 
-            AddressBook selectedBook = addressBooks[choice - 1];
-            Console.WriteLine($"\n--- Selected Address Book: {selectedBook.Name} ---");
-            AddressBookMenu(selectedBook);
+            AddressBookMenu(addressBooks[choice - 1]);
         }
 
         private static void AddressBookMenu(AddressBook book)
@@ -125,11 +119,6 @@ namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
                         break;
                     case 4:
                         book.DeleteContact();
-                        break;
-                    case 0:
-                        break;
-                    default:
-                        Console.WriteLine("Invalid Choice");
                         break;
                 }
 
