@@ -1,12 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace BridgeLabzDup.oops_csharp_practice.scenario_based.address_book_system
+namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.address_book
 {
     internal class AddressBookMain
     {
-        static void Main(string[] args) // Entry Point
+        // Entry point of the Address Book application
+        static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Multiple Address Book System");
+            Console.WriteLine("Welcome to Address Book Program\n"); // Greeting message
+
+            // Display the main menu and handle user choices
             MenuManager.DisplayMenu();
         }
     }
