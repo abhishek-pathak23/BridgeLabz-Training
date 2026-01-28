@@ -1,0 +1,14 @@
+C:\C sharp\BridgeLabzDup\BridgeLabzDup\collections-csharp-practice\scenario-based\aero-vigil\bin\Debug\net10.0\aero-vigil.exe
+C:\C sharp\BridgeLabzDup\BridgeLabzDup\collections-csharp-practice\scenario-based\aero-vigil\bin\Debug\net10.0\aero-vigil.deps.json
+C:\C sharp\BridgeLabzDup\BridgeLabzDup\collections-csharp-practice\scenario-based\aero-vigil\bin\Debug\net10.0\aero-vigil.runtimeconfig.json
+C:\C sharp\BridgeLabzDup\BridgeLabzDup\collections-csharp-practice\scenario-based\aero-vigil\bin\Debug\net10.0\aero-vigil.dll
+C:\C sharp\BridgeLabzDup\BridgeLabzDup\collections-csharp-practice\scenario-based\aero-vigil\bin\Debug\net10.0\aero-vigil.pdb
+C:\C sharp\BridgeLabzDup\BridgeLabzDup\collections-csharp-practice\scenario-based\aero-vigil\obj\Debug\net10.0\aero-vigil.GeneratedMSBuildEditorConfig.editorconfig
+C:\C sharp\BridgeLabzDup\BridgeLabzDup\collections-csharp-practice\scenario-based\aero-vigil\obj\Debug\net10.0\aero-vigil.AssemblyInfoInputs.cache
+C:\C sharp\BridgeLabzDup\BridgeLabzDup\collections-csharp-practice\scenario-based\aero-vigil\obj\Debug\net10.0\aero-vigil.AssemblyInfo.cs
+C:\C sharp\BridgeLabzDup\BridgeLabzDup\collections-csharp-practice\scenario-based\aero-vigil\obj\Debug\net10.0\aero-vigil.csproj.CoreCompileInputs.cache
+C:\C sharp\BridgeLabzDup\BridgeLabzDup\collections-csharp-practice\scenario-based\aero-vigil\obj\Debug\net10.0\aero-vigil.dll
+C:\C sharp\BridgeLabzDup\BridgeLabzDup\collections-csharp-practice\scenario-based\aero-vigil\obj\Debug\net10.0\refint\aero-vigil.dll
+C:\C sharp\BridgeLabzDup\BridgeLabzDup\collections-csharp-practice\scenario-based\aero-vigil\obj\Debug\net10.0\aero-vigil.pdb
+C:\C sharp\BridgeLabzDup\BridgeLabzDup\collections-csharp-practice\scenario-based\aero-vigil\obj\Debug\net10.0\aero-vigil.genruntimeconfig.cache
+C:\C sharp\BridgeLabzDup\BridgeLabzDup\collections-csharp-practice\scenario-based\aero-vigil\obj\Debug\net10.0\ref\aero-vigil.dll
