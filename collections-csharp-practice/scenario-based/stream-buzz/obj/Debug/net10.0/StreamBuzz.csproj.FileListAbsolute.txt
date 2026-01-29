@@ -1,0 +1,15 @@
+/Users/arjunsingh/Documents/BridgeLabz-Training/collections-csharp-practice/scenario-based/StreamBuzz/obj/Debug/net10.0/StreamBuzz.GeneratedMSBuildEditorConfig.editorconfig
+/Users/arjunsingh/Documents/BridgeLabz-Training/collections-csharp-practice/scenario-based/StreamBuzz/obj/Debug/net10.0/StreamBuzz.AssemblyInfoInputs.cache
+/Users/arjunsingh/Documents/BridgeLabz-Training/collections-csharp-practice/scenario-based/StreamBuzz/obj/Debug/net10.0/StreamBuzz.AssemblyInfo.cs
+/Users/arjunsingh/Documents/BridgeLabz-Training/collections-csharp-practice/scenario-based/StreamBuzz/obj/Debug/net10.0/StreamBuzz.csproj.CoreCompileInputs.cache
+/Users/arjunsingh/Documents/BridgeLabz-Training/collections-csharp-practice/scenario-based/StreamBuzz/obj/Debug/net10.0/StreamBuzz.sourcelink.json
+/Users/arjunsingh/Documents/BridgeLabz-Training/collections-csharp-practice/scenario-based/StreamBuzz/bin/Debug/net10.0/StreamBuzz
+/Users/arjunsingh/Documents/BridgeLabz-Training/collections-csharp-practice/scenario-based/StreamBuzz/bin/Debug/net10.0/StreamBuzz.deps.json
+/Users/arjunsingh/Documents/BridgeLabz-Training/collections-csharp-practice/scenario-based/StreamBuzz/bin/Debug/net10.0/StreamBuzz.runtimeconfig.json
+/Users/arjunsingh/Documents/BridgeLabz-Training/collections-csharp-practice/scenario-based/StreamBuzz/bin/Debug/net10.0/StreamBuzz.dll
+/Users/arjunsingh/Documents/BridgeLabz-Training/collections-csharp-practice/scenario-based/StreamBuzz/bin/Debug/net10.0/StreamBuzz.pdb
+/Users/arjunsingh/Documents/BridgeLabz-Training/collections-csharp-practice/scenario-based/StreamBuzz/obj/Debug/net10.0/StreamBuzz.dll
+/Users/arjunsingh/Documents/BridgeLabz-Training/collections-csharp-practice/scenario-based/StreamBuzz/obj/Debug/net10.0/refint/StreamBuzz.dll
+/Users/arjunsingh/Documents/BridgeLabz-Training/collections-csharp-practice/scenario-based/StreamBuzz/obj/Debug/net10.0/StreamBuzz.pdb
+/Users/arjunsingh/Documents/BridgeLabz-Training/collections-csharp-practice/scenario-based/StreamBuzz/obj/Debug/net10.0/StreamBuzz.genruntimeconfig.cache
+/Users/arjunsingh/Documents/BridgeLabz-Training/collections-csharp-practice/scenario-based/StreamBuzz/obj/Debug/net10.0/ref/StreamBuzz.dll
