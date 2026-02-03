@@ -1,0 +1,14 @@
+C:\C sharp\BridgeLabzDup\BridgeLabzDup\oops-csharp-practice\scenario-based\hazard-analyzer\bin\Debug\net10.0\hazard-analyzer.exe
+C:\C sharp\BridgeLabzDup\BridgeLabzDup\oops-csharp-practice\scenario-based\hazard-analyzer\bin\Debug\net10.0\hazard-analyzer.deps.json
+C:\C sharp\BridgeLabzDup\BridgeLabzDup\oops-csharp-practice\scenario-based\hazard-analyzer\bin\Debug\net10.0\hazard-analyzer.runtimeconfig.json
+C:\C sharp\BridgeLabzDup\BridgeLabzDup\oops-csharp-practice\scenario-based\hazard-analyzer\bin\Debug\net10.0\hazard-analyzer.dll
+C:\C sharp\BridgeLabzDup\BridgeLabzDup\oops-csharp-practice\scenario-based\hazard-analyzer\bin\Debug\net10.0\hazard-analyzer.pdb
+C:\C sharp\BridgeLabzDup\BridgeLabzDup\oops-csharp-practice\scenario-based\hazard-analyzer\obj\Debug\net10.0\hazard-analyzer.GeneratedMSBuildEditorConfig.editorconfig
+C:\C sharp\BridgeLabzDup\BridgeLabzDup\oops-csharp-practice\scenario-based\hazard-analyzer\obj\Debug\net10.0\hazard-analyzer.AssemblyInfoInputs.cache
+C:\C sharp\BridgeLabzDup\BridgeLabzDup\oops-csharp-practice\scenario-based\hazard-analyzer\obj\Debug\net10.0\hazard-analyzer.AssemblyInfo.cs
+C:\C sharp\BridgeLabzDup\BridgeLabzDup\oops-csharp-practice\scenario-based\hazard-analyzer\obj\Debug\net10.0\hazard-analyzer.csproj.CoreCompileInputs.cache
+C:\C sharp\BridgeLabzDup\BridgeLabzDup\oops-csharp-practice\scenario-based\hazard-analyzer\obj\Debug\net10.0\hazard-analyzer.dll
+C:\C sharp\BridgeLabzDup\BridgeLabzDup\oops-csharp-practice\scenario-based\hazard-analyzer\obj\Debug\net10.0\refint\hazard-analyzer.dll
+C:\C sharp\BridgeLabzDup\BridgeLabzDup\oops-csharp-practice\scenario-based\hazard-analyzer\obj\Debug\net10.0\hazard-analyzer.pdb
+C:\C sharp\BridgeLabzDup\BridgeLabzDup\oops-csharp-practice\scenario-based\hazard-analyzer\obj\Debug\net10.0\hazard-analyzer.genruntimeconfig.cache
+C:\C sharp\BridgeLabzDup\BridgeLabzDup\oops-csharp-practice\scenario-based\hazard-analyzer\obj\Debug\net10.0\ref\hazard-analyzer.dll
