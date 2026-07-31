@@ -1,6 +1,0 @@
-==========
-2/18/2026 3:12:22 PM
-ArgumentException
-Invalid Phone Format.
-   at CitizenUtility.AddCitizen(Citizen citizen) in C:\C sharp\DemoPractice\tech-ville\Service\CitizenUtility.cs:line 44
-==========
