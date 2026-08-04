@@ -28,3 +28,17 @@ Completed:
 - Verified 1NF, 2NF, 3NF Normalization
 - Implemented Indexes & Covering Index on `Appointments`
 - Finalized Day 2 ER Diagram
+
+### Day-3 (4 August 2026)
+
+#### Topics Covered:
+- SQL Joins (Inner, Left, Right, Full Outer)
+- Stored Procedures
+- Triggers & Audit Tables
+
+#### Completed:
+- Wrote join queries across Patients, Doctors & Appointments
+- Created stored procedures for booking and status updates
+- Built audit tables (`PatientAudit`, `AppointmentAudit`)
+- Implemented AFTER INSERT/UPDATE/DELETE triggers for automated visit history tracking
+- Added `SeedData.sql` script to populate sample data across all tables
