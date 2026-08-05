@@ -42,3 +42,17 @@ Completed:
 - Built audit tables (`PatientAudit`, `AppointmentAudit`)
 - Implemented AFTER INSERT/UPDATE/DELETE triggers for automated visit history tracking
 - Added `SeedData.sql` script to populate sample data across all tables
+
+### Day-4 (5 August 2026)
+
+#### Topics Covered:
+- ADO.NET (`Microsoft.Data.SqlClient`)
+- Modular Layered Architecture (Entity, Service, Menu/UI)
+- Integration of SQL Stored Procedures & Triggers with C#
+- Interactive Console Application Navigation
+
+#### Completed:
+- Built full C# Console Application (`HealthClinicApp`) using ADO.NET
+- Created entity models (`Patient`, `Doctor`, `Appointment`, `Billing`, `VisitHistory`)
+- Implemented ADO.NET data access services with parameterized queries and stored procedure execution
+- Implemented menu-driven UI supporting Patient, Doctor, Appointment, Audit Log & Billing management
