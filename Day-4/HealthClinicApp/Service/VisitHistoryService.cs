@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using System.Data;
 using Microsoft.Data.SqlClient;
 using HealthClinicApp.Entity;
+using HealthClinicApp.Interface;
 
 namespace HealthClinicApp.Service
 {
-    public class VisitHistoryService
+    public class VisitHistoryService : IVisitHistoryService
     {
-        private readonly string _connectionString;
+        private readonly DBConnectionUtility _dbUtility;
 
-        public VisitHistoryService(string connectionString)
+        public VisitHistoryService(DBConnectionUtility dbUtility)
         {
-            _connectionString = connectionString;
+            _dbUtility = dbUtility;
         }
 
-        private SqlConnection GetConnection() => new SqlConnection(_connectionString);
+        private SqlConnection GetConnection() => _dbUtility.CreateConnection();
 
         // Retrieve full visit history for a specific patient
         public List<VisitHistory> GetPatientVisitHistory(int patientId)

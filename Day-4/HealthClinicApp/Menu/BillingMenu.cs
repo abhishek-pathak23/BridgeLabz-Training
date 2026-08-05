@@ -1,14 +1,15 @@
 using System;
 using HealthClinicApp.Entity;
+using HealthClinicApp.Interface;
 using HealthClinicApp.Service;
 
 namespace HealthClinicApp.Menu
 {
     public class BillingMenu
     {
-        private readonly BillingService _billingService;
+        private readonly IBillingService _billingService;
 
-        public BillingMenu(BillingService billingService)
+        public BillingMenu(IBillingService billingService)
         {
             _billingService = billingService;
         }

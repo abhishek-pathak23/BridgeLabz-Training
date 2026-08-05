@@ -1,4 +1,5 @@
 using System;
+using HealthClinicApp.Interface;
 using HealthClinicApp.Service;
 
 namespace HealthClinicApp.Menu
@@ -6,17 +7,17 @@ namespace HealthClinicApp.Menu
     // Patient role menu - shows only what a patient needs to see
     public class PatientRoleMenu
     {
-        private readonly AppointmentService _appointmentService;
-        private readonly VisitHistoryService _visitHistoryService;
-        private readonly BillingService _billingService;
-        private readonly PatientService _patientService;
+        private readonly IAppointmentService _appointmentService;
+        private readonly IVisitHistoryService _visitHistoryService;
+        private readonly IBillingService _billingService;
+        private readonly IPatientService _patientService;
         private int _patientId;
 
         public PatientRoleMenu(
-            AppointmentService appointmentService,
-            VisitHistoryService visitHistoryService,
-            BillingService billingService,
-            PatientService patientService)
+            IAppointmentService appointmentService,
+            IVisitHistoryService visitHistoryService,
+            IBillingService billingService,
+            IPatientService patientService)
         {
             _appointmentService = appointmentService;
             _visitHistoryService = visitHistoryService;

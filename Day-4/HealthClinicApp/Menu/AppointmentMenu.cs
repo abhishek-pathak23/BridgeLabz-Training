@@ -1,14 +1,15 @@
 using System;
 using HealthClinicApp.Entity;
+using HealthClinicApp.Interface;
 using HealthClinicApp.Service;
 
 namespace HealthClinicApp.Menu
 {
     public class AppointmentMenu
     {
-        private readonly AppointmentService _appointmentService;
+        private readonly IAppointmentService _appointmentService;
 
-        public AppointmentMenu(AppointmentService appointmentService)
+        public AppointmentMenu(IAppointmentService appointmentService)
         {
             _appointmentService = appointmentService;
         }

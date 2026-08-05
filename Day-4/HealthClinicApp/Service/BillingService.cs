@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using System.Data;
 using Microsoft.Data.SqlClient;
 using HealthClinicApp.Entity;
+using HealthClinicApp.Interface;
 
 namespace HealthClinicApp.Service
 {
-    public class BillingService
+    public class BillingService : IBillingService
     {
-        private readonly string _connectionString;
+        private readonly DBConnectionUtility _dbUtility;
 
-        public BillingService(string connectionString)
+        public BillingService(DBConnectionUtility dbUtility)
         {
-            _connectionString = connectionString;
+            _dbUtility = dbUtility;
         }
 
-        private SqlConnection GetConnection() => new SqlConnection(_connectionString);
+        private SqlConnection GetConnection() => _dbUtility.CreateConnection();
 
         // Fetch all billing invoices
         public List<Billing> GetAllBills()

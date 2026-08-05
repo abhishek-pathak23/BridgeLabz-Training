@@ -1,4 +1,5 @@
 using System;
+using HealthClinicApp.Interface;
 using HealthClinicApp.Service;
 
 namespace HealthClinicApp.Menu
@@ -6,11 +7,11 @@ namespace HealthClinicApp.Menu
     // Doctor role menu - shows only what a doctor needs
     public class DoctorRoleMenu
     {
-        private readonly AppointmentService _appointmentService;
-        private readonly VisitHistoryService _visitHistoryService;
+        private readonly IAppointmentService _appointmentService;
+        private readonly IVisitHistoryService _visitHistoryService;
         private int _doctorId;
 
-        public DoctorRoleMenu(AppointmentService appointmentService, VisitHistoryService visitHistoryService)
+        public DoctorRoleMenu(IAppointmentService appointmentService, IVisitHistoryService visitHistoryService)
         {
             _appointmentService = appointmentService;
             _visitHistoryService = visitHistoryService;

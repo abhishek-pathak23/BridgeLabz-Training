@@ -1,15 +1,16 @@
 using System;
 using System.Data;
 using HealthClinicApp.Entity;
+using HealthClinicApp.Interface;
 using HealthClinicApp.Service;
 
 namespace HealthClinicApp.Menu
 {
     public class VisitHistoryMenu
     {
-        private readonly VisitHistoryService _visitHistoryService;
+        private readonly IVisitHistoryService _visitHistoryService;
 
-        public VisitHistoryMenu(VisitHistoryService visitHistoryService)
+        public VisitHistoryMenu(IVisitHistoryService visitHistoryService)
         {
             _visitHistoryService = visitHistoryService;
         }

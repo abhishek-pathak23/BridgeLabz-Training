@@ -1,4 +1,5 @@
 using System;
+using HealthClinicApp.Interface;
 using HealthClinicApp.Menu;
 using HealthClinicApp.Service;
 
@@ -14,14 +15,17 @@ namespace HealthClinicApp
 
             try
             {
-                // Instantiate all domain services
-                var patientService = new PatientService(connectionString);
-                var doctorService = new DoctorService(connectionString);
-                var appointmentService = new AppointmentService(connectionString);
-                var visitHistoryService = new VisitHistoryService(connectionString);
-                var billingService = new BillingService(connectionString);
+                // Centralized DB Connection Utility
+                var dbUtility = new DBConnectionUtility(connectionString);
 
-                // Instantiate domain-specific menus
+                // Instantiate all domain services via interface types
+                IPatientService patientService = new PatientService(dbUtility);
+                IDoctorService doctorService = new DoctorService(dbUtility);
+                IAppointmentService appointmentService = new AppointmentService(dbUtility);
+                IVisitHistoryService visitHistoryService = new VisitHistoryService(dbUtility);
+                IBillingService billingService = new BillingService(dbUtility);
+
+                // Instantiate domain-specific menus consuming service interfaces
                 var patientMenu = new PatientMenu(patientService);
                 var doctorMenu = new DoctorMenu(doctorService);
                 var appointmentMenu = new AppointmentMenu(appointmentService);
@@ -31,7 +35,7 @@ namespace HealthClinicApp
                 // Admin menu has full access to all sub-menus
                 var adminMenu = new HealthMenu(patientMenu, doctorMenu, appointmentMenu, visitHistoryMenu, billingMenu);
 
-                // Role-specific menus for doctors and patients
+                // Role-specific menus for doctors and patients consuming service interfaces
                 var doctorRoleMenu = new DoctorRoleMenu(appointmentService, visitHistoryService);
                 var patientRoleMenu = new PatientRoleMenu(appointmentService, visitHistoryService, billingService, patientService);
 

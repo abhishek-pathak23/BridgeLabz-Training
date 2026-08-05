@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using System.Data;
 using Microsoft.Data.SqlClient;
 using HealthClinicApp.Entity;
+using HealthClinicApp.Interface;
 
 namespace HealthClinicApp.Service
 {
-    public class DoctorService
+    public class DoctorService : IDoctorService
     {
-        private readonly string _connectionString;
+        private readonly DBConnectionUtility _dbUtility;
 
-        public DoctorService(string connectionString)
+        public DoctorService(DBConnectionUtility dbUtility)
         {
-            _connectionString = connectionString;
+            _dbUtility = dbUtility;
         }
 
-        private SqlConnection GetConnection() => new SqlConnection(_connectionString);
+        private SqlConnection GetConnection() => _dbUtility.CreateConnection();
 
         // Fetch all doctors from database
         public List<Doctor> GetAllDoctors()
