@@ -56,3 +56,18 @@ Completed:
 - Created entity models (`Patient`, `Doctor`, `Appointment`, `Billing`, `VisitHistory`)
 - Implemented ADO.NET data access services with parameterized queries and stored procedure execution
 - Implemented menu-driven UI supporting Patient, Doctor, Appointment, Audit Log & Billing management
+
+### Day-5 (6 August 2026)
+
+#### Topics Covered:
+- Introduction to ASP.NET Core and ASP.NET WebAPI
+- RESTful Services — principles and design
+- Controllers, Routing, HTTP Verbs & Status Codes
+- Swagger / OpenAPI for API documentation
+
+#### Completed:
+- Scaffolded basic ASP.NET Core WebAPI project (`HealthClinicAPI`)
+- Created `GreetingItem` model as a REST resource
+- Built `GreetingsController` with full CRUD — GET, POST, PUT, DELETE
+- Applied attribute routing (`[Route]`, `[HttpGet]`, `[HttpPost]`, `[HttpPut]`, `[HttpDelete]`)
+- Configured Swagger UI for interactive API documentation and testing
