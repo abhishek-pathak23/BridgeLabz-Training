@@ -1,0 +1,23 @@
+@model GreetingsApp.Models.GreetingModel
+
+@{
+    ViewData["Title"] = "My Greetings App";
+}
+
+<div style="max-width: 500px; margin: 40px auto; font-family: Arial, sans-serif;">
+    <h2 style="text-align: center; color: #333;">My Greetings App</h2>
+
+    <div style="background-color: #e8f4fd; border-left: 5px solid #2196F3; padding: 15px; margin: 20px 0; border-radius: 4px;">
+        <h3 style="margin: 0; color: #0d47a1; font-size: 1.25rem;">@Model.Message</h3>
+    </div>
+
+    <form method="post" asp-action="Index">
+        <div style="margin-bottom: 15px;">
+            <label for="userName" style="display: block; margin-bottom: 5px; font-weight: bold; color: #555;">Enter Your Name:</label>
+            <input type="text" id="userName" name="userName" value="@Model.UserInputName" placeholder="e.g. Abhishek" style="width: 100%; padding: 10px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px;" />
+        </div>
+        <button type="submit" style="width: 100%; padding: 10px; background-color: #0d6efd; color: white; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer;">
+            Get Greeting
+        </button>
+    </form>
+</div>

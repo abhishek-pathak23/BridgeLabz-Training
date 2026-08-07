@@ -71,3 +71,18 @@ Completed:
 - Built `GreetingsController` with full CRUD — GET, POST, PUT, DELETE
 - Applied attribute routing (`[Route]`, `[HttpGet]`, `[HttpPost]`, `[HttpPut]`, `[HttpDelete]`)
 - Configured Swagger UI for interactive API documentation and testing
+
+### Day-6 (7 August 2026)
+
+#### Topics Covered:
+- Model-View-Controller (MVC) Pattern
+- C# REST API calls and Request/Response handling
+- HTTP Protocol, Controllers, Routing
+
+#### Completed:
+- Scaffolded 'My Greetings App' ASP.NET Core MVC & REST WebAPI project (`Day-6/GreetingsApp`)
+- Built `GreetingModel` as data model (Model layer)
+- Implemented `IGreetingService` & `GreetingService` for business logic and in-memory repository
+- Created MVC `GreetingController` with Razor Views (`Index.cshtml`, `Edit.cshtml`) for web UI (Controller & View layers)
+- Built `GreetingsApiController` with full REST HTTP verbs (`GET`, `POST`, `PUT`, `DELETE`), query parameters, and status responses
+- Configured Swagger UI and live interactive API testing client
