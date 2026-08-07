@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using HealthClinicAPI.Models;
+using GreetingAPI.Models;
 
-namespace HealthClinicAPI.Controllers;
+namespace GreetingAPI.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

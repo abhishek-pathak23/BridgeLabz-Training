@@ -66,7 +66,7 @@ Completed:
 - Swagger / OpenAPI for API documentation
 
 #### Completed:
-- Scaffolded basic ASP.NET Core WebAPI project (`HealthClinicAPI`)
+- Scaffolded basic ASP.NET Core WebAPI project (`GreetingAPI`)
 - Created `GreetingItem` model as a REST resource
 - Built `GreetingsController` with full CRUD — GET, POST, PUT, DELETE
 - Applied attribute routing (`[Route]`, `[HttpGet]`, `[HttpPost]`, `[HttpPut]`, `[HttpDelete]`)

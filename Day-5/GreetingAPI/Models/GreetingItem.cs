@@ -1,4 +1,4 @@
-namespace HealthClinicAPI.Models;
+namespace GreetingAPI.Models;
 
 public class GreetingItem
 {
