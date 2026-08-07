@@ -81,7 +81,7 @@ Completed:
 
 #### Completed:
 - Scaffolded 'My Greetings App' ASP.NET Core MVC & REST WebAPI project (`Day-6/GreetingsApp`)
-- Built `GreetingModel` as data model (Model layer)
+- Built `GreetingModel` as data model  (Model layer)
 - Implemented `IGreetingService` & `GreetingService` for business logic and in-memory repository
 - Created MVC `GreetingController` with Razor Views (`Index.cshtml`, `Edit.cshtml`) for web UI (Controller & View layers)
 - Built `GreetingsApiController` with full REST HTTP verbs (`GET`, `POST`, `PUT`, `DELETE`), query parameters, and status responses
