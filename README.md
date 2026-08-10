@@ -86,3 +86,18 @@ Completed:
 - Created MVC `GreetingController` with Razor Views (`Index.cshtml`, `Edit.cshtml`) for web UI (Controller & View layers)
 - Built `GreetingsApiController` with full REST HTTP verbs (`GET`, `POST`, `PUT`, `DELETE`), query parameters, and status responses
 - Configured Swagger UI and live interactive API testing client
+
+### Day-7 (10 August 2026)
+
+#### Topics Covered:
+- Backend Basics & Minimal APIs in ASP.NET Core
+- Lightweight Endpoint Definitions & Route Mapping (`MapGroup`, `MapGet`, `MapPost`, `MapPut`, `MapDelete`)
+- Dependency Injection with Services & Models in Minimal APIs
+- OpenAPI / Swagger Integration & Interactive Web Dashboard
+
+#### Completed:
+- Scaffolded Contacts App Minimal API project (`Day-7/ContactsApi`)
+- Created `Contact` domain model and DTO records (`CreateContactDto`, `UpdateContactDto`)
+- Implemented `IContactService` and thread-safe `ContactService` with seed data
+- Defined modular Minimal API endpoints in Program.cs with full CRUD support, search, and category filtering
+- Configured Swashbuckle OpenAPI / Swagger UI integration for interactive API testing
