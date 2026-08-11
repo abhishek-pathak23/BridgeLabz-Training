@@ -101,3 +101,19 @@ Completed:
 - Implemented `IContactService` and thread-safe `ContactService` with seed data
 - Defined modular Minimal API endpoints in Program.cs with full CRUD support, search, and category filtering
 - Configured Swashbuckle OpenAPI / Swagger UI integration for interactive API testing
+
+### Day-8 (11 August 2026)
+
+#### Topics Covered:
+- H2 Database & ADO.NET wrapper (H2Sharp / H2SharpADO.NET50)
+- Repository Layer Pattern with ADO.NET
+- Postman API Testing with embedded test scripts
+- RestAssured.Net for automated API endpoint testing
+
+#### Completed:
+- Continued Contacts App backend — added H2 in-memory database (`Day-8/ContactsApi`)
+- Created `IContactRepository` interface and `ContactRepository` with ADO.NET (`System.Data.H2`) for CRUD operations
+- Added `DatabaseInitializer` for automatic H2 table creation and seed data on startup
+- Updated Minimal API endpoints to use Repository layer via Dependency Injection
+- Created Postman collection (`Contacts_API_Day8.postman_collection.json`) with test scripts for all endpoints
+- Added RestAssured.Net xUnit test suite (`RestAssuredApiTests.cs`) directly inside the project testing 3 API endpoints (GET all, POST create, GET by ID)
