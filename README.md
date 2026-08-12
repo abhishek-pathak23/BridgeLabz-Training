@@ -117,3 +117,17 @@ Completed:
 - Updated Minimal API endpoints to use Repository layer via Dependency Injection
 - Created Postman collection (`Contacts_API_Day8.postman_collection.json`) with test scripts for all endpoints
 - Added RestAssured.Net xUnit test suite (`RestAssuredApiTests.cs`) directly inside the project testing 3 API endpoints (GET all, POST create, GET by ID)
+
+### Day-9 (12 August 2026)
+
+#### Topics Covered:
+- ORM concepts; Entity Framework introduction
+- WebAPI-powered REST API with EF
+- Dependency Injection in ASP.NET Core
+
+#### Completed:
+- Bootstrapped Entity Framework in a new WebAPI project (`Day-9/ContactsApiEF`)
+- Created `ContactsDbContext` with EF Core connected to SQL Server Express (`localhost\SQLEXPRESS`)
+- Configured Dependency Injection for `DbContext` and EF Core repository `EfContactRepository`
+- Applied EF Core Migrations (`InitialCreate`) to auto-create the `ContactsDb` database and `Contacts` table with seed data
+- Migrated the Contacts App backend endpoints to use Entity Framework Core while retaining the Repository Pattern architecture
