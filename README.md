@@ -131,3 +131,21 @@ Completed:
 - Configured Dependency Injection for `DbContext` and EF Core repository `EfContactRepository`
 - Applied EF Core Migrations (`InitialCreate`) to auto-create the `ContactsDb` database and `Contacts` table with seed data
 - Migrated the Contacts App backend endpoints to use Entity Framework Core while retaining the Repository Pattern architecture
+
+### Day-10 (13 August 2026)
+
+#### Topics Covered:
+- Backend w/ Entity Framework & H2 Database integration (`H2Sharp8_v14200.Driver`)
+- Dynamic connection string configuration via `appsettings.json` (no hardcoding)
+- LINQ to Entities — querying via LINQ (`Where`, `FirstOrDefaultAsync`, `ToListAsync`, `OrderBy`)
+- 4-Tier Clean Architecture Solution (`ModelLayer`, `RepositoryLayer`, `BusinessLayer`, `EmployeePayrollApp`)
+- Layer-specific Interfaces & Services (`IEmployeeRL`/`EmployeeRL`, `IEmployeeBL`/`EmployeeBL`)
+
+#### Completed:
+- Scaffolded full solution `Day-10/EmployeePayrollApp` containing 4 projects (`ModelLayer`, `RepositoryLayer`, `BusinessLayer`, `EmployeePayrollApp`)
+- Implemented `ModelLayer` with `Employee` model, DTOs, and `EmployeeDbContext`
+- Implemented `RepositoryLayer` with `IEmployeeRL` interface in `Interface/` and `EmployeeRL` service in `Service/` utilizing LINQ to Entities
+- Implemented `BusinessLayer` with `IEmployeeBL` interface in `Interface/` and `EmployeeBL` service in `Service/` enforcing business validations
+- Configured dynamic connection string & H2 database properties in `appsettings.json` without hardcoding
+- Built `EmployeeController` REST API supporting full CRUD operations, department filtering, and search
+- Successfully built solution (`0 Warnings, 0 Errors`) and verified HTTP endpoints (`GET`, `POST`, `PUT`, `DELETE`)
