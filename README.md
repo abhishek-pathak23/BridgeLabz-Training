@@ -149,3 +149,17 @@ Completed:
 - Configured dynamic connection string & H2 database properties in `appsettings.json` without hardcoding
 - Built `EmployeeController` REST API supporting full CRUD operations, department filtering, and search
 - Successfully built solution (`0 Warnings, 0 Errors`) and verified HTTP endpoints (`GET`, `POST`, `PUT`, `DELETE`)
+
+### Day-11 (14 August 2026)
+
+#### Topics Covered:
+- Backend w/ Entity Framework — Schema Evolution & DbContext Lifecycle
+- EF Core Migrations (`dotnet ef migrations add InitialCreate`, `Database.Migrate()`)
+- Database Schema Seeding (`OnModelCreating` seed data)
+- 4-Tier Clean Architecture for **Employee Payroll App** backend
+
+#### Completed:
+- Built `Day-11/EmployeePayrollApp` 4-tier solution (`ModelLayer`, `RepositoryLayer`, `BusinessLayer`, `EmployeePayrollApp`) with EF Core SQL Server provider and EF Migrations
+- Implemented `EmployeeDbContext` with model seeding and automated migration execution on application startup
+- Retained full CRUD REST API in `EmployeeController` with department filtering and search
+- Verified solution compiles cleanly (`0 Warnings, 0 Errors`) and EF Core migrations (`InitialCreate`) execute successfully
