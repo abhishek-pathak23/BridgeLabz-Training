@@ -75,6 +75,7 @@ public class EmployeeController : ControllerBase
         {
             return BadRequest(new { Message = ex.Message });
         }
+
     }
 
     /// <summary>
@@ -89,5 +90,6 @@ public class EmployeeController : ControllerBase
             return NotFound(new { Message = $"Employee with ID {id} was not found." });
         }
         return Ok(new { Message = $"Employee with ID {id} was successfully deleted." });
+        
     }
 }
