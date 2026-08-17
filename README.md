@@ -163,3 +163,35 @@ Completed:
 - Implemented `EmployeeDbContext` with model seeding and automated migration execution on application startup
 - Retained full CRUD REST API in `EmployeeController` with department filtering and search
 - Verified solution compiles cleanly (`0 Warnings, 0 Errors`) and EF Core migrations (`InitialCreate`) execute successfully
+
+### Day-12 (17 August 2026)
+
+#### Topics Covered:
+- Advanced Backend Development — WebAPI REST Verbs, HttpClient & Action Methods
+- WebAPI REST Verbs — `GET` / `POST` / `PUT` / `PATCH` / `DELETE`
+- Action Methods in ASP.NET Core Controllers
+- HttpClient for consuming external REST APIs
+- Password Encryption using HMAC-SHA512 salted hashing
+- 4-Tier Clean Architecture for **Fundoo Notes App — User Management Module**
+
+#### Completed:
+- Scaffolded `Day-12/FundooNotesApp` 4-tier solution (`ModelLayer`, `RepositoryLayer`, `BusinessLayer`, `FundooNotesApp`)
+- Implemented `User` entity model with `PasswordHash`, `PasswordSalt`, `ResetToken`, `ResetTokenExpiry` fields
+- Created DTOs: `UserRegisterDto`, `UserLoginDto`, `ForgotPasswordDto`, `ResetPasswordDto`, `UpdateUserDto`, `PatchEmailDto`, `UserResponseDto`
+- Implemented `FundooDbContext` with unique email index constraint and EF Core Migrations (`InitialCreate`)
+- Implemented `IPasswordHasher`/`PasswordHasher` with salted HMAC-SHA512 password encryption and verification
+- Implemented `IUserService`/`UserService` handling user registration, authentication, password recovery, and profile updates
+- Built `IExternalQuoteService`/`ExternalQuoteService` demonstrating `HttpClient` consuming external REST APIs
+- Built `UserController` with Action Methods covering all REST verbs:
+  - `POST /api/User/register` — User registration with encrypted password
+  - `POST /api/User/login` — User authentication and verification
+  - `POST /api/User/forgot-password` — Generate password recovery token (30-min expiry)
+  - `POST /api/User/reset-password` — Password reset with valid token
+  - `GET /api/User` — Retrieve all users
+  - `GET /api/User/{id}` — Retrieve user by ID
+  - `PUT /api/User/{id}` — Full profile update
+  - `PATCH /api/User/{id}/email` — Partial email update
+  - `DELETE /api/User/{id}` — Delete user account
+  - `GET /api/User/quote` — External API consumption via HttpClient
+- Configured Swagger UI with root auto-redirect (`GET / -> /swagger`)
+- Verified solution compiles cleanly (`0 Warnings, 0 Errors`) and EF Core migrations (`InitialCreate`) execute successfully
