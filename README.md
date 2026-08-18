@@ -195,3 +195,46 @@ Completed:
   - `GET /api/User/quote` — External API consumption via HttpClient
 - Configured Swagger UI with root auto-redirect (`GET / -> /swagger`)
 - Verified solution compiles cleanly (`0 Warnings, 0 Errors`) and EF Core migrations (`InitialCreate`) execute successfully
+
+### Day-13 (18 August 2026)
+
+#### Topics Covered:
+- Advanced Backend Development — Dependency Injection Deep-Dive, Routing, Reverse Proxy & CORS
+- Dependency Injection Deep-Dive: Service Lifecycles (`Transient`, `Scoped`, `Singleton`), Lifecycle Tracking, Clean Extension Registration
+- Routing Configuration: Route Constraints (`int:min(1)`, `regex`, `range`, `datetime`), Optional Parameters (`{role?}`), Route Prefixes & Token Replacement
+- Reverse Proxy Concepts: `ForwardedHeadersOptions` (`X-Forwarded-For`, `X-Forwarded-Proto`, `X-Forwarded-Host`), Reverse Proxy Header Forwarding Middleware (`UseForwardedHeaders`), Client IP Resolution
+- CORS (Cross-Origin Resource Sharing): Named Policies (`FundooFrontendPolicy`, `AllowAll`), Middleware (`UseCors`), Controller-Level `[EnableCors]`
+- 4-Tier Clean Architecture for **Fundoo Notes App — Authentication & Authorization Module (Groundwork)**
+
+#### Completed:
+- Scaffolded `Day-13/FundooNotesApp` 4-tier solution (`ModelLayer`, `RepositoryLayer`, `BusinessLayer`, `FundooNotesApp`)
+- Extended `User` entity model with `Role` column (supporting `"User"` and `"Admin"` roles, default `"User"`)
+- Created updated DTOs (`UserRegisterDto` with `Role`, `UserLoginDto`, `AuthResponseDto`, `UserResponseDto`, `ClaimsDebugDto`)
+- Created `FundooDbContext` and generated EF Core Migrations (`InitialCreate`) applying schema updates to SQL Server (`FundooNotesDb_Day13`)
+- Implemented Dependency Injection Deep-Dive services (`ITransientLifecycleService`, `IScopedLifecycleService`, `ISingletonLifecycleService`, `IDiLifecycleTracker`) and modular registration extension `AddFundooApplicationServices`
+- Implemented `DiDemoController` (`GET /api/DiDemo/inspect`, `GET /api/DiDemo/summary`) demonstrating lifecycle behaviors across HTTP requests
+- Implemented `RoutingDemoController` demonstrating route constraints (`int:min(1)`, regex code format, range, datetime, and optional parameters)
+- Configured Reverse Proxy `ForwardedHeadersOptions` & `UseForwardedHeaders` middleware with `ProxyDemoController` (`GET /api/ProxyDemo/echo`)
+- Configured CORS policies in `Program.cs` (`FundooFrontendPolicy` with restricted origins, credentials, and methods; `AllowAll` for public access)
+- Implemented Authentication & Authorization groundwork:
+  - Custom `GroundworkAuthHandler` handling Bearer authentication headers and producing `ClaimsPrincipal`
+  - Authorization policies (`AdminOnly`, `UserOnly`)
+  - `IAuthService`/`AuthService` handling registration, credential verification, and groundwork token generation/validation
+  - `ICurrentUserService`/`CurrentUserService` resolving authenticated user context from `HttpContext`
+  - `AuthController` with endpoints:
+    - `POST /api/auth/register` — Register account with role assignment
+    - `POST /api/auth/login` — Authenticate credentials and return Groundwork Token
+    - `GET /api/auth/me` — Retrieve current authenticated user profile (`[Authorize]`)
+    - `GET /api/auth/claims` — Inspect resolved claims and authentication identity (`[Authorize]`)
+    - `GET /api/auth/admin-only` — Role-restricted endpoint (`[Authorize(Roles = "Admin")]`)
+    - `GET /api/auth/user-only` — User/Admin authorized endpoint (`[Authorize(Roles = "User,Admin")]`)
+    - `POST /api/auth/forgot-password` & `POST /api/auth/reset-password` — Password recovery flow
+  - `UserController` with role-aware CRUD and route constraints:
+    - `GET /api/User` — Restricted to `Admin` role
+    - `GET /api/User/{id:int:min(1)}` — Authenticated user access (admins or self)
+    - `PUT /api/User/{id:int:min(1)}` — Authenticated profile update
+    - `PATCH /api/User/{id:int:min(1)}/email` — Authenticated email update
+    - `DELETE /api/User/{id:int:min(1)}` — Restricted to `Admin` role
+    - `GET /api/User/quote` — Public external quote API consumption via `HttpClient`
+- Configured Swagger UI with Groundwork Bearer Token security definition and root auto-redirect (`GET / -> /swagger`)
+- Verified solution compiles cleanly (`0 Warnings, 0 Errors`) and all automated tests in `verify_day13.ps1` execute successfully
