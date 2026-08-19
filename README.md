@@ -238,3 +238,24 @@ Completed:
     - `GET /api/User/quote` — Public external quote API consumption via `HttpClient`
 - Configured Swagger UI with Groundwork Bearer Token security definition and root auto-redirect (`GET / -> /swagger`)
 - Verified solution compiles cleanly (`0 Warnings, 0 Errors`) and all automated tests in `verify_day13.ps1` execute successfully
+
+### Day-14 (19 August 2026)
+
+#### Topics Covered:
+- Advanced Backend Development — Notes Management & JWT Authentication Integration
+- Securing Endpoints with `[Authorize]` and JWT Claims extraction
+- Entity Framework Relationships (User -> Notes)
+- 4-Tier Clean Architecture for **Fundoo Notes App — Notes Module**
+
+#### Completed:
+- Scaffolded `Day-14/FundooNotesApp` 4-tier solution (`ModelLayer`, `RepositoryLayer`, `BusinessLayer`, `FundooNotesApp`)
+- Implemented `Note` entity model
+- Created DTOs: `CreateNoteDto`
+- Implemented `INoteService`/`NoteService` handling note creation, retrieval, and deletion with ownership validation
+- Built `NotesController` with Action Methods covering:
+  - `POST /api/notes` — Create note (UserId and Email extracted securely from JWT claims)
+  - `GET /api/notes` — Retrieve all notes for the authenticated user
+  - `DELETE /api/notes/{id}` — Delete a note by Id (with ownership validation)
+- Integrated JWT token extraction via `ICurrentUserService` to map `sub` claim to `UserId` and `email` claim to `Email`
+- Enforced data security and ownership — users can only view and delete their own notes
+- Verified solution compiles cleanly (`0 Warnings, 0 Errors`)
