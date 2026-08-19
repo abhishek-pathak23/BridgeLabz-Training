@@ -86,6 +86,60 @@ public class NotesController : ControllerBase
         });
     }
 
+    // ── GET /api/notes/{id} ───────────────────────────────────────────────────
+
+    /// <summary>
+    /// Retrieve a single note by Id for the authenticated user.
+    /// </summary>
+    [HttpGet("{id:int}")]
+    public async Task<IActionResult> GetNoteById(int id)
+    {
+        var userId = _currentUserService.UserId;
+        if (userId == null)
+            return Unauthorized(new { Message = "Unable to extract UserId from JWT 'sub' claim." });
+
+        try
+        {
+            var note = await _noteService.GetNoteByIdAsync(id, userId.Value);
+            return Ok(note);
+        }
+        catch (KeyNotFoundException ex)
+        {
+            return NotFound(new { Message = ex.Message });
+        }
+    }
+
+    // ── PUT /api/notes/{id} ───────────────────────────────────────────────────
+
+    /// <summary>
+    /// Update an existing note by Id.
+    /// </summary>
+    [HttpPut("{id:int}")]
+    public async Task<IActionResult> UpdateNote(int id, [FromBody] UpdateNoteDto dto)
+    {
+        var userId = _currentUserService.UserId;
+        if (userId == null)
+            return Unauthorized(new { Message = "Unable to extract UserId from JWT 'sub' claim." });
+
+        try
+        {
+            var updatedNote = await _noteService.UpdateNoteAsync(id, dto, userId.Value);
+            return Ok(new
+            {
+                Message = $"Note (Id: {id}) updated successfully.",
+                Note    = updatedNote
+            });
+        }
+        catch (KeyNotFoundException ex)
+        {
+            return NotFound(new { Message = ex.Message });
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(new { Message = ex.Message });
+        }
+    }
+
     // ── DELETE /api/notes/{id} ────────────────────────────────────────────────
 
     /// <summary>

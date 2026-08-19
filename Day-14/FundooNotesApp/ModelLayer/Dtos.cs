@@ -130,6 +130,16 @@ public record CreateNoteDto
     public string? Description { get; init; }
 }
 
+public record UpdateNoteDto
+{
+    [Required(ErrorMessage = "Title is required.")]
+    [StringLength(200)]
+    public string Title { get; init; } = string.Empty;
+
+    [StringLength(5000)]
+    public string? Description { get; init; }
+}
+
 public record NoteResponseDto
 {
     public int Id { get; init; }

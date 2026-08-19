@@ -42,6 +42,15 @@ public class NoteRepository : INoteRepository
             .Include(n => n.User)
             .FirstOrDefaultAsync(n => n.Id == noteId);
 
+    /// <summary>Updates an existing note.</summary>
+    public async Task<Note> UpdateNoteAsync(Note note)
+    {
+        note.UpdatedAt = DateTime.UtcNow;
+        _context.Notes.Update(note);
+        await _context.SaveChangesAsync();
+        return note;
+    }
+
     /// <summary>
     /// Deletes a note only if it belongs to the given userId (from JWT claim 'sub').
     /// Prevents cross-user deletion.

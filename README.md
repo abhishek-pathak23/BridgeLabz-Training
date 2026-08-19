@@ -255,6 +255,8 @@ Completed:
 - Built `NotesController` with Action Methods covering:
   - `POST /api/notes` — Create note (UserId and Email extracted securely from JWT claims)
   - `GET /api/notes` — Retrieve all notes for the authenticated user
+  - `GET /api/notes/{id}` — Retrieve a single note by Id (with ownership validation)
+  - `PUT /api/notes/{id}` — Update an existing note by Id (with ownership validation)
   - `DELETE /api/notes/{id}` — Delete a note by Id (with ownership validation)
 - Integrated JWT token extraction via `ICurrentUserService` to map `sub` claim to `UserId` and `email` claim to `Email`
 - Enforced data security and ownership — users can only view and delete their own notes

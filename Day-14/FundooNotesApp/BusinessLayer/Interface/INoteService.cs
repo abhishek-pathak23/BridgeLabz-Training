@@ -13,6 +13,12 @@ public interface INoteService
     /// <summary>Get all notes for the authenticated user (userId from JWT).</summary>
     Task<List<NoteResponseDto>> GetAllNotesAsync(int userId);
 
+    /// <summary>Get a single note. Validates ownership via userId from JWT.</summary>
+    Task<NoteResponseDto> GetNoteByIdAsync(int noteId, int userId);
+
+    /// <summary>Update a note. Validates ownership via userId from JWT.</summary>
+    Task<NoteResponseDto> UpdateNoteAsync(int noteId, UpdateNoteDto dto, int userId);
+
     /// <summary>Delete a note. Validates ownership via userId from JWT.</summary>
     Task<bool> DeleteNoteAsync(int noteId, int userId);
 }

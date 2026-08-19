@@ -61,6 +61,36 @@ public class NoteService : INoteService
         return true;
     }
 
+    /// <summary>
+    /// Gets a single note by id.
+    /// Validates ownership.
+    /// </summary>
+    public async Task<NoteResponseDto> GetNoteByIdAsync(int noteId, int userId)
+    {
+        var note = await _noteRepository.GetNoteByIdAsync(noteId);
+        if (note == null || note.UserId != userId)
+            throw new KeyNotFoundException($"Note with Id {noteId} not found or does not belong to the current user.");
+
+        return ToResponseDto(note, note.User?.Email ?? string.Empty);
+    }
+
+    /// <summary>
+    /// Updates a note.
+    /// Validates ownership.
+    /// </summary>
+    public async Task<NoteResponseDto> UpdateNoteAsync(int noteId, UpdateNoteDto dto, int userId)
+    {
+        var note = await _noteRepository.GetNoteByIdAsync(noteId);
+        if (note == null || note.UserId != userId)
+            throw new KeyNotFoundException($"Note with Id {noteId} not found or does not belong to the current user.");
+
+        note.Title       = dto.Title.Trim();
+        note.Description = dto.Description?.Trim();
+
+        var updated = await _noteRepository.UpdateNoteAsync(note);
+        return ToResponseDto(updated, updated.User?.Email ?? string.Empty);
+    }
+
     private static NoteResponseDto ToResponseDto(Note n, string userEmail) => new()
     {
         Id          = n.Id,
