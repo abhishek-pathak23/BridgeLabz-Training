@@ -261,3 +261,32 @@ Completed:
 - Integrated JWT token extraction via `ICurrentUserService` to map `sub` claim to `UserId` and `email` claim to `Email`
 - Enforced data security and ownership — users can only view and delete their own notes
 - Verified solution compiles cleanly (`0 Warnings, 0 Errors`)
+
+### Day-15 (20 August 2026)
+
+#### Topics Covered:
+- Advanced Backend Development — Entity Framework Advanced Patterns, CQRS & LINQ Deep-Dive
+- ORM advanced patterns: soft-delete, state toggling with EF Core
+- CQRS (Command Query Responsibility Segregation) — separating read vs write operations
+- LINQ advanced querying: `OrderByDescending`, `Contains`, `Where` with multiple conditions
+
+#### Completed:
+- Scaffolded `Day-15/FundooNotesApp` 4-tier solution (based on Day-14, extended with new features)
+- Extended `Note` entity model with `IsPinned`, `IsArchived`, `IsTrashed` (soft-delete) fields
+- Generated EF Core Migration (`InitDay15`) applying schema changes to SQL Server (`FundooNotesDb_Day15`)
+- Implemented `INoteService`/`NoteService` and `INoteRepository`/`NoteRepository` with:
+  - Toggle Pin — pinned notes appear at the top of the notes list
+  - Toggle Archive — archived notes are hidden from the main view
+  - Toggle Trash — soft-delete; notes are moved to trash, not permanently deleted
+  - Search Notes — advanced LINQ `Contains` search across Title and Description
+- Built `NotesController` with full CRUD + Day-15 endpoints:
+  - `POST /api/notes` — Create note
+  - `GET /api/notes` — Get all active notes (pinned first)
+  - `GET /api/notes/{id}` — Get single note
+  - `PUT /api/notes/{id}` — Update note
+  - `DELETE /api/notes/{id}` — Permanently delete note
+  - `PATCH /api/notes/{id}/pin` — Toggle Pin
+  - `PATCH /api/notes/{id}/archive` — Toggle Archive
+  - `PATCH /api/notes/{id}/trash` — Toggle Trash (soft-delete / restore)
+  - `GET /api/notes/search?q=abc` — Search notes by title or description
+- Verified solution compiles cleanly (`0 Warnings, 0 Errors`) with migration generated successfully
