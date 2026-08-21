@@ -288,5 +288,33 @@ Completed:
   - `PATCH /api/notes/{id}/pin` — Toggle Pin
   - `PATCH /api/notes/{id}/archive` — Toggle Archive
   - `PATCH /api/notes/{id}/trash` — Toggle Trash (soft-delete / restore)
-  - `GET /api/notes/search?q=abc` — Search notes by title or description
-- Verified solution compiles cleanly (`0 Warnings, 0 Errors`) with migration generated successfully
+  - Verified solution compiles cleanly (`0 Warnings, 0 Errors`) with migration generated successfully
+
+### Day-16 (21 August 2026)
+
+#### Topics Covered:
+- Entity Framework Advanced Relationships: Many-to-Many Architecture
+- Enterprise Application Logging with **NLog**
+- Unit Testing with **MSTest** and **Moq**
+- API Documentation using Swagger XML Comments
+- Advanced Postman Collection Automation
+
+#### Completed:
+- Scaffolded `Day-16/FundooNotesApp` 4-tier solution (based on Day-15, extended with new features)
+- **Labels (Tags) Management**:
+  - Implemented `Label` and `NoteLabel` entities
+  - Built `ILabelService`/`LabelService` and `ILabelRepository`/`LabelRepository` for full CRUD and label assignment
+  - Configured EF Core `FundooDbContext` with composite primary keys for the many-to-many relationship
+  - Generated EF Core Migration (`Day16_AddLabels`) applying schema changes to SQL Server
+  - Built `LabelsController` exposing 8 new API endpoints
+  - Extended `NoteResponseDto` and repository logic to eagerly load and return assigned labels when fetching notes
+- **NLog Integration**:
+  - Replaced the default ASP.NET Core logger with NLog
+  - Configured `nlog.config` to output structured, color-coded console logs and rolling daily log files (`/logs/`)
+- **Unit Testing**:
+  - Added a new test project `FundooNotesApp.Tests` targeting `net10.0`
+  - Wrote 20 isolated unit tests using **MSTest** and **Moq** covering `NoteService` and `LabelService`
+- **Swagger Documentation**:
+  - Enabled XML Documentation file generation in the `.csproj` and configured Swagger UI to display rich endpoint descriptions
+- **Postman API Testing**:
+  - Built a comprehensive Postman Collection (`FundooNotesApp_Day16.postman_collection.json`) with automated test scripts that dynamically capture and store JWT Bearer tokens for seamless workflow testing
