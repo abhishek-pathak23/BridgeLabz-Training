@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="FundooNotesApp.Tests/FundooNotesApp.Tests.csproj" />
+  <Project Path="FundooNotesApp\FundooNotesApp.csproj" />
+  <Project Path="BusinessLayer\BusinessLayer.csproj" />
+  <Project Path="RepositoryLayer\RepositoryLayer.csproj" />
+  <Project Path="ModelLayer\ModelLayer.csproj" />
+</Solution>

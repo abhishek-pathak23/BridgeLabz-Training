@@ -318,3 +318,46 @@ Completed:
   - Enabled XML Documentation file generation in the `.csproj` and configured Swagger UI to display rich endpoint descriptions
 - **Postman API Testing**:
   - Built a comprehensive Postman Collection (`FundooNotesApp_Day16.postman_collection.json`) with automated test scripts that dynamically capture and store JWT Bearer tokens for seamless workflow testing
+
+### Day-17 (24 August 2026)
+
+#### Topics Covered:
+- Advanced Backend Development — ASP.NET Identity, WebAPI Filters, StyleCop & Session Management
+- ASP.NET Identity — user identity management (JWT-based claims identity)
+- WebAPI Filters — Global Exception Filter for standardized error handling
+- StyleCop for code-style enforcement at build time
+- Session Management — in-memory session state middleware
+- Fundoo Notes App — Reminder & Notification Module
+- Queuing via RabbitMQ for asynchronous, non-blocking background processes
+
+#### Completed:
+- Scaffolded `Day-17/FundooNotesApp` 4-tier solution (based on Day-16, extended with new features)
+- **Reminder Module (Google Keep-style "Remind Me")**:
+  - Extended `Note` entity model with nullable `DateTime? Reminder` field
+  - Updated `CreateNoteDto`, `UpdateNoteDto`, and `NoteResponseDto` to support the reminder date
+  - Implemented `AddOrUpdateReminderAsync` in `INoteService`/`NoteService` for dedicated reminder management
+  - Generated EF Core Migration (`AddReminderToNotes`) applying schema changes to SQL Server (`FundooNotesDb_Day17`)
+  - Built new endpoint in `NotesController`:
+    - `POST /api/notes/{id}/reminder` — Add, update, or clear a reminder for a note
+- **WebAPI Global Exception Filter**:
+  - Created `GlobalExceptionFilter` implementing `IExceptionFilter` in `Filters/` directory
+  - Catches all unhandled exceptions across controllers and returns standardized JSON error responses (HTTP 500)
+  - Automatically logs exceptions via NLog
+  - Registered globally in `Program.cs` via `options.Filters.Add<GlobalExceptionFilter>()`
+- **RabbitMQ Integration (Producer + Consumer)**:
+  - Created `IRabbitMqProducer` interface and `RabbitMqProducer` implementation using RabbitMQ.Client v7.2.2 async API
+  - Producer lazily initializes a singleton RabbitMQ connection and publishes `ReminderEvent` JSON messages to `reminder_queue`
+  - Created `ReminderConsumerService` as a `BackgroundService` that listens to `reminder_queue` and processes reminder events
+  - Consumer uses manual ACK for reliable message processing with error handling and requeue support
+  - Added `RabbitMQ` configuration section to `appsettings.json` (`HostName`, `Port`, `UserName`, `Password`)
+  - Producer failures are gracefully handled (logged, not thrown) so the API remains functional even without RabbitMQ
+- **StyleCop Integration**:
+  - Installed `StyleCop.Analyzers` NuGet package for compile-time C# code-style enforcement
+  - Created `stylecop.json` configuration file with rules for documentation, ordering, naming, and layout conventions
+  - Configured `.csproj` with `<AdditionalFiles Include="stylecop.json" />` for StyleCop rule discovery
+- **Session Management**:
+  - Configured `AddDistributedMemoryCache()` and `AddSession()` services with 30-minute idle timeout and HTTP-only cookies
+  - Registered `app.UseSession()` middleware in the pipeline before authentication
+- **Test Updates**:
+  - Updated `NoteServiceTests.cs` to mock the new `IRabbitMqProducer` dependency
+- Verified solution compiles cleanly (`0 Errors`) with StyleCop analyzer warnings active
